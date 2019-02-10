@@ -71,6 +71,7 @@ int main(){
         flag = -1;
     }
 
+    //check if victory cards are affected at all
     if ((testG.supplyCount[province] == G.supplyCount[province]) && (testG.supplyCount[estate] == G.supplyCount[estate]) && (testG.supplyCount[duchy] == G.supplyCount[duchy]))
     {
         printf("TEST 5 PASSED:\n None of the victory cards were affect.\n");
@@ -81,6 +82,7 @@ int main(){
         flag = -1;
     }
 
+    //check to see if the correct piles are used.
     if (testG.handCount[currentPlayer + 1] != G.handCount[currentPlayer + 1] && testG.deckCount[currentPlayer + 1] != G.deckCount[currentPlayer + 1])
     {
         printf("TEST 6 FAILED:\n Player 2's pile was messed with.\n");

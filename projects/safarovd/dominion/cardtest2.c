@@ -41,11 +41,11 @@ int main(){
     //check if 3 cards get selected 
     cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
 
-    if(G.handCount[currentPlayer] + 4 == testG.handCount[currentPlayer]){//includes smithy bug syntax
+    if(G.handCount[currentPlayer] + 3 == testG.handCount[currentPlayer]){//includes smithy bug syntax
         printf("TEST 2 PASSED:\n 3 additional cards were selected.\n");
     }
     else{
-        printf("TEST 2 FAILED:\n Actual: %d\n Expected: %d", testG.handCount[currentPlayer], G.handCount[currentPlayer]);
+        printf("TEST 2 FAILED:\n Actual: %d\n Expected: %d\n", testG.handCount[currentPlayer], G.handCount[currentPlayer] + 3);
         flag = -1;
     }
 
@@ -82,7 +82,7 @@ int main(){
         }
         else
         {
-            printf("TESTS FAILED.\n");
+            printf("TEST FAILED.\n");
         }
     return 0;
 }

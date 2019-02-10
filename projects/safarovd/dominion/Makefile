@@ -45,8 +45,8 @@ cardtest2: cardtest2.c dominion.o rngs.o
 cardtest3: cardtest3.c dominion.o rngs.o
 	gcc -o cardtest3 -g  cardtest3.c dominion.o rngs.o $(CFLAGS)
 
-#cardtest4: cardtest4.c dominion.o rngs.o
-#	gcc -o cardtest4 -g  cardtest4.c dominion.o rngs.o $(CFLAGS)
+cardtest4: cardtest4.c dominion.o rngs.o
+	gcc -o cardtest4 -g  cardtest4.c dominion.o rngs.o $(CFLAGS)
 
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
@@ -59,7 +59,7 @@ tests: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c cardtest2.c c
 	gcc -o cardtest1 -g  cardtest1.c dominion.o rngs.o $(CFLAGS)
 	gcc -o cardtest2 -g  cardtest2.c dominion.o rngs.o $(CFLAGS)
 	gcc -o cardtest3 -g  cardtest3.c dominion.o rngs.o $(CFLAGS)
-#	gcc -o cardtest4 -g  cardtest4.c dominion.o rngs.o $(CFLAGS)
+	gcc -o cardtest4 -g  cardtest4.c dominion.o rngs.o $(CFLAGS)
 
 #runtests: testDrawCard 
 #	./testDrawCard &> unittestresult.out
@@ -76,7 +76,7 @@ runtests: unittest1 unittest2 unittest3 unittest4 #cardtest1 cardtest2 cardtest3
 	./cardtest1 >> unittestresults.out
 	./cardtest2 >> unittestresults.out
 	./cardtest3 >> unittestresults.out
-#	./cardtest4 >> unittestresults.out
+	./cardtest4 >> unittestresults.out
 	gcov dominion.c >> unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
 	gcov -b dominion.c >> unittestresults.out
@@ -89,5 +89,5 @@ all: playdom player tests runtests
 
 
 clean:
-	rm -f *.o playdom.exe playdom player player.exe test.exe test unittestresults *.gcov *.gcda *.gcno *.so *.out unittest1 unittest1.exe unittest2 unittest2.exe unittest3 unittest3.exe unittest4 unittest4.exe cardtest1 cardtest1.exe cardtest2 cardtest2.exe cardtest3 cardtest3.exe #cardtest4 cardtest4.exe testDrawCard testDrawCard.exe
+	rm -f *.o playdom.exe playdom player player.exe test.exe test unittestresults *.gcov *.gcda *.gcno *.so *.out unittest1 unittest1.exe unittest2 unittest2.exe unittest3 unittest3.exe unittest4 unittest4.exe cardtest1 cardtest1.exe cardtest2 cardtest2.exe cardtest3 cardtest3.exe cardtest4 cardtest4.exe #testDrawCard testDrawCard.exe
 
