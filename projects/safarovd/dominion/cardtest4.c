@@ -53,7 +53,7 @@ int main(){
         printf("TEST 2 FAILED:\n Actual: %d\n Expected: %d\n", testG.handCount[currentPlayer], G.handCount[currentPlayer] + 1);
         flag = -1;
     }
-
+//check that the correct card gets replaced by a silver
     if (testG.hand[currentPlayer][handpos] == silver){
         printf("TEST 3 PASSED:\n Copper at hand position 3 was replaced with a silver.\n");
     }
@@ -62,6 +62,19 @@ int main(){
         flag = -1;
     }
 
+    cardEffect(mine, choice1, 8, choice3, &testG, handpos, &bonus);
+
+    //check that the correct card gets replaced by a gold
+    if (testG.hand[currentPlayer][handpos] == gold)
+    {
+        printf("TEST 6 FAILED:\n Copper at hand position 3 was replaced with a gold.\n");
+        flag = -1;
+    }
+    else
+    {
+        printf("TEST 6 PASSED:\n Copper at hand position %d was not replaced with a gold, but instead a %d.\n", handpos, testG.hand[currentPlayer][handpos]);
+
+    }
     //check if victory cards are affected at all
     if ((testG.supplyCount[province] == G.supplyCount[province]) && (testG.supplyCount[estate] == G.supplyCount[estate]) && (testG.supplyCount[duchy] == G.supplyCount[duchy]))
     {

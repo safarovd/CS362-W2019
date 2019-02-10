@@ -34,7 +34,7 @@ int main(){
     check = supplyCount(currentCard, &G);
     //0 in supply of the current card
     testG.supplyCount[currentCard] = 0;
-    //test for if there is a supply pile for the first card
+    //test for if there is a supply pile for the first card (0)
     if (check != testG.supplyCount[currentCard]){
         printf("TEST 1 PASSED:\n Test output: %d\n Expected output: %d\n", testG.supplyCount[currentCard], (G.supplyCount[currentCard] - 10) );
     }
@@ -45,7 +45,7 @@ int main(){
     check = supplyCount(currentCard, &G);
     //10 in supply of the current card
     testG.supplyCount[currentCard] = 10;
-    //test for if there is a supply pile for the first card
+    //test for if there is a supply pile for the first card (10)
     if (check == testG.supplyCount[currentCard])
     {
         printf("TEST 2 PASSED:\n Test output: %d\n Expected output: %d\n", testG.supplyCount[currentCard], G.supplyCount[currentCard]);
