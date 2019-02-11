@@ -42,7 +42,7 @@ int main(){
     cardEffect(village, choice1, choice2, choice3, &testG, handpos, &bonus);
 
     if (G.handCount[currentPlayer] + 1 == testG.handCount[currentPlayer])
-    { //includes smithy bug syntax
+    {
         printf("TEST 2 PASSED:\n 1 additional card was selected.\n");
     }
     else
@@ -52,7 +52,7 @@ int main(){
     }
 
     if (G.numActions + 2 == testG.numActions)
-    { //includes smithy bug syntax
+    { 
         printf("TEST 3 PASSED:\n 2 additional action cards were selected.\n");
     }
     else

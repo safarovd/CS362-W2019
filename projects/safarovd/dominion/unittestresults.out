@@ -37,8 +37,8 @@ TEST 2 PASSED:
  Test output: 10
  Expected output: 10
 TEST 3 PASSED:
- Test output: 24
- Expected output: 24
+ Test output: 11
+ Expected output: 11
 ALL TESTS HAVE PASSED.
 <<<---------------------TESTING: getCost()---------------------->>>
 TEST 1 PASSED:
@@ -46,7 +46,7 @@ TEST 1 PASSED:
 TEST 2 PASSED:
  BAD CASES ARE NOT ACCEPTED
 TEST 3 PASSED:
- Price for salvager chosen at random is 4
+ Price for mine chosen at random is 5
 ALL TESTS HAVE PASSED.
 <<<---------------------TESTING: Adventurer()---------------------->>>
 TEST 1 PASSED:
@@ -718,7 +718,7 @@ Creating 'dominion.c.gcov'
         -:  607:    case gardens:
         1:  608:      return 4;
         -:  609:    case mine:
-        1:  610:      return 5;
+        2:  610:      return 5;
         -:  611:    case remodel:
         1:  612:      return 4;
         -:  613:    case smithy:
@@ -744,7 +744,7 @@ Creating 'dominion.c.gcov'
         -:  633:    case outpost:
         1:  634:      return 5;
         -:  635:    case salvager:
-        2:  636:      return 4;
+        1:  636:      return 4;
         -:  637:    case sea_hag:
         1:  638:      return 4;
         -:  639:    case treasure_map:
@@ -2308,7 +2308,7 @@ branch  7 taken 3%
 branch  8 taken 6%
 branch  9 taken 3%
 branch 10 taken 3%
-branch 11 taken 3%
+branch 11 taken 6%
 branch 12 taken 3%
 branch 13 taken 3%
 branch 14 taken 3%
@@ -2321,7 +2321,7 @@ branch 20 taken 3%
 branch 21 taken 3%
 branch 22 taken 3%
 branch 23 taken 3%
-branch 24 taken 6%
+branch 24 taken 3%
 branch 25 taken 3%
 branch 26 taken 3%
 branch 27 taken 3%
@@ -2349,7 +2349,7 @@ branch 27 taken 3%
         -:  607:    case gardens:
         1:  608:      return 4;
         -:  609:    case mine:
-        1:  610:      return 5;
+        2:  610:      return 5;
         -:  611:    case remodel:
         1:  612:      return 4;
         -:  613:    case smithy:
@@ -2375,7 +2375,7 @@ branch 27 taken 3%
         -:  633:    case outpost:
         1:  634:      return 5;
         -:  635:    case salvager:
-        2:  636:      return 4;
+        1:  636:      return 4;
         -:  637:    case sea_hag:
         1:  638:      return 4;
         -:  639:    case treasure_map:
