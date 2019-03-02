@@ -680,7 +680,7 @@ int adventurerFunc(int drawntreasure, struct gameState *state, int currentPlayer
     {
       temphand[z] = cardDrawn;
       state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-      //z++;                                                          
+      z++;                                                          
       //BUG NUMBER 2. "Forgot to increment the z counter"
     }
   }

@@ -21,19 +21,38 @@ testBuyCard: testDrawCard.c dominion.o rngs.o
 testAll: dominion.o testSuite.c
 	gcc -o testSuite testSuite.c -g  dominion.o rngs.o $(CFLAGS)
 
+randomtestadventurer.out:
+	make clean; make tests; make runtests;
+
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
-runtests: testDrawCard 
-	./testDrawCard &> unittestresult.out
-	gcov dominion.c >> unittestresult.out
-	cat dominion.c.gcov >> unittestresult.out
+tests: randomtestadventurer.c randomtestcard1.c randomtestcard2.c dominion.o rngs.o 
+	gcc -o randomtestadventurer -g  randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+	gcc -o randomtestcard1 -g  randomtestcard1.c dominion.o rngs.o $(CFLAGS)
+	gcc -o randomtestcard2 -g  randomtestcard2.c dominion.o rngs.o $(CFLAGS)
 
+
+runtests: randomtestadventurer randomtestcard1 randomtestcard2 
+	./randomtestadventurer >> randomtestadventurer.out
+	gcov -f randomtestadventurer.c >> randomtestadventurer.out
+	gcov -b dominion.c >> randomtestadventurer.out
+	cat dominion.c.gcov >> randomtestadventurer.out
+	
+	./randomtestcard1 >> randomtestcard1.out
+	gcov -f randomtestcard1.c >> randomtestcard1.out
+	gcov -b dominion.c >> randomtestcard1.out
+	cat dominion.c.gcov >> randomtestcard1.out
+	
+	./randomtestcard2 >> randomtestcard2.out
+	gcov -f randomtestcard2.c >> randomtestcard2.out
+	gcov -b dominion.c >> randomtestcard2.out
+	cat dominion.c.gcov >> randomtestcard2.out
 
 player: player.c interface.o
-	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
+	gcc -o player player.c -g dominion.o rngs.o interface.o $(CFLAGS)
 
-all: playdom player 
+all: playdom player tests runtests
 
 clean:
-	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe
+	rm -f *.o playdom.exe playdom player player.exe tests randomtestcard2.out randomtestcard1.out randomtestadventurer.out tests.exe *.gcov *.gcda *.gcno *.so *.out randomtestadventurer randomtestadventurer.exe randomtestcard1 randomtestcard1.exe randomtestcard2 randomtestcard2.exe
