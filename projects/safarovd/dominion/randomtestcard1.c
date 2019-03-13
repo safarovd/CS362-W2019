@@ -24,7 +24,7 @@ int main()
 
     for (i = 0; i < 1000; i++)
     {
-        int numPlayers = 2;//(arr[(rand() % 4)]);
+        int numPlayers = 2; //(arr[(rand() % 4)]);
 
         printf("\n<------------------------SMITHY TEST LOOP %d------------------------->\n\n", i + 1);
 
